@@ -18,11 +18,9 @@ $(document).ready(function() {
 
       promise.then(function(response) {
         let body = JSON.parse(response);
-        let sortedByDate = bike.sortBikesByDate(body, weeks);
-        console.log(sortedByDate);
         $('.results').text(`We Found the Follwing Bikes that Match Search Request:`);
-        for(let x = 0; x < (sortedByDate.length); x++){
-            $('.showBikes').append(`<li>City:${city}<br> Title: ${sortedByDate[x][0]}<br> Date Stolen: ${sortedByDate[x][1]}</li>`);
+        for(let x = 0; x < (body.length); x++){
+            $('.showDoctors').append(`<li>City:${data.practices.profile.first_name}<br></li>`);
             }
       }, function(error) {
         $('.showErrors').text(`There was an error processing your request: ${error.message}`);
